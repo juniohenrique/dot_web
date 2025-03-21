@@ -16,6 +16,7 @@ module.exports = defineConfig({
       html: true,
       json: true,
       timestamp: 'mmddyyyy_HHMMss',
+      code: false,
     },
     videosFolder: 'cypress/videos',
     screenshotsFolder: 'cypress/screenshots',
