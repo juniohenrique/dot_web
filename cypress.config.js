@@ -3,9 +3,20 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
   projectId: "2ysxm5",
   e2e: {
-    baseUrl: 'https://www.saucedemo.com/', 
+    baseUrl: 'https://www.saucedemo.com/',
     specPattern: 'cypress/e2e/*.cy.js',
     supportFile: 'cypress/support/e2e.js',
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports/mochawesome',
+      reportTitle: 'Relatório de Testes Saucedemo',
+      reportPageTitle: 'Testes E2E Saucedemo',
+      inlineAssets: true,
+      overwrite: false,
+      html: true,
+      json: true,
+      timestamp: 'mmddyyyy_HHMMss',
+    },
     videosFolder: 'cypress/videos',
     screenshotsFolder: 'cypress/screenshots',
     viewportWidth: 1280,
