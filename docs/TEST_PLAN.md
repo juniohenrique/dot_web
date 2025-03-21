@@ -16,18 +16,22 @@ O objetivo deste plano de testes é garantir a qualidade do site Saucedemo por m
 1. **Login:**
    - Validação de login com credenciais válidas.
    - Validação de login com credenciais inválidas.
+   - Validação de login com usuário bloqueado.
+   - Validação de login com campos vazios.
 
 2. **Carrinho:**
    - Adição de produtos ao carrinho.
    - Remoção de produtos do carrinho.
+   - Verificação do número de itens no ícone do carrinho.
 
 3. **Checkout:**
-   - Preenchimento de informações de checkout.
-   - Finalização da compra.
+   - Finalização da compra com sucesso.
+   - Validação de mensagens de erro durante o checkout (campos obrigatórios faltando).
 
 ### Funcionalidades Não Testadas
 - Fluxos de recuperação de senha.
 - Integração com gateways de pagamento externos.
+- Fluxos de devolução ou cancelamento de pedidos.
 
 ---
 
@@ -60,15 +64,6 @@ O objetivo deste plano de testes é garantir a qualidade do site Saucedemo por m
 2. **Testes de Regressão:**
    - Verificação de que novas alterações não quebraram funcionalidades existentes.
 
-### Dados de Teste
-- Credenciais válidas:
-  - Username: `standard_user`
-  - Password: `secret_sauce`
-- Credenciais inválidas:
-  - Username: `invalid_user`
-  - Password: `invalid_password`
-
----
 
 ## Cronograma
 
