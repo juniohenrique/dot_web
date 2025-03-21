@@ -4,7 +4,7 @@ describe('Checkout Tests', () => {
     cy.fixture('users').then((users) => {
       const { username, password } = users.validUser;
       cy.get('#user-name').type(username);
-      cy.get('#password').type(password);
+      cy.get('#password').type(password, {log: false});
       cy.get('#login-button').click();
     });
   });

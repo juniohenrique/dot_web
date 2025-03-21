@@ -7,7 +7,7 @@ describe('Login Tests', () => {
     cy.fixture('users').then((users) => {
       const { username, password } = users.validUser;
       cy.get('#user-name').type(username);
-      cy.get('#password').type(password);
+      cy.get('#password').type(password, {log: false});
       cy.get('#login-button').click();
       cy.url().should('include', '/inventory.html');
       cy.get('.title').should('have.text', 'Products');
@@ -18,7 +18,7 @@ describe('Login Tests', () => {
     cy.fixture('users').then((users) => {
       const { username, password } = users.invalidUser;
       cy.get('#user-name').type(username);
-      cy.get('#password').type(password);
+      cy.get('#password').type(password, {log: false});
       cy.get('#login-button').click();
       cy.get('[data-test="error"]')
         .should('be.visible')
@@ -30,7 +30,7 @@ describe('Login Tests', () => {
     cy.fixture('users').then((users) => {
       const { username, password } = users.lockedUser;
       cy.get('#user-name').type(username);
-      cy.get('#password').type(password);
+      cy.get('#password').type(password, {log: false});
       cy.get('#login-button').click();
       cy.get('[data-test="error"]')
         .should('be.visible')
@@ -42,7 +42,7 @@ describe('Login Tests', () => {
     cy.fixture('users').then((users) => {
       const { password } = users.validUser;
       cy.get('#user-name').clear();
-      cy.get('#password').type(password);
+      cy.get('#password').type(password, {log: false});
       cy.get('#login-button').click();
       cy.get('[data-test="error"]')
         .should('be.visible')
