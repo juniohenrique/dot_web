@@ -3,7 +3,9 @@ describe('Cart Tests', () => {
     cy.visit('/');
     cy.fixture('users').then((users) => {
       const { username, password } = users.validUser;
-      cy.login(username, password);
+      cy.get('#user-name').type(username);
+      cy.get('#password').type(password);
+      cy.get('#login-button').click();
     });
   });
 
